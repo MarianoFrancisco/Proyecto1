@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
+import manejadorDatos.EstablecerReportes;
 /**
  *
  * @author Mariano
@@ -19,6 +20,7 @@ public class InicioProyecto1 extends javax.swing.JFrame {
     public InicioProyecto1() {
         this.setContentPane(fondoInicio);
         initComponents();
+        EstablecerReportes.creadorDatosReportes();
         this.setLocationRelativeTo(null);
     }
 
@@ -196,8 +198,8 @@ public class InicioProyecto1 extends javax.swing.JFrame {
         Jugador.jugador1.setNombre(ReceptorNombrejTextField1.getText());
         Jugador.jugador1.setNick(ReceptorNickjTextField2.getText());
         this.setVisible(false);        
-        CrearAnimales.LlamadoCrearAnimales();
-
+        CrearAnimalesPlantas.LlamadoCrearAnimales();
+        EstablecerReportes.creadorDatosReportes();
     }//GEN-LAST:event_IniciarJuegojButton1ActionPerformed
 
     private void ReceptorNickjTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReceptorNickjTextField2ActionPerformed

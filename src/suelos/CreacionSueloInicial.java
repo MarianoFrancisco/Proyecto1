@@ -6,7 +6,7 @@ package suelos;
  */
 public class CreacionSueloInicial {
     public static Suelos sueloInicial[] = new Suelos[4];
-    public static Suelos sueloElegir[][] = new Suelos[5][5];
+    public static Suelos sueloElegir[][] = new Suelos[9][9];
     public static CreacionSueloInicial sueloCreador;
     public void crearSuelos(){
         sueloInicial[0] = new SueloAgua();

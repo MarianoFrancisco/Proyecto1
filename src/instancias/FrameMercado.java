@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jugador.Jugador;
+import static manejadorDatos.AlmacenamientoUsuarioPlantas.almacenamientoUsuarioPlantas;
 
 /**
  *
@@ -41,6 +42,11 @@ public class FrameMercado extends javax.swing.JFrame {
         RegresarGranjajButton2 = new javax.swing.JButton();
         LogojLabel1 = new javax.swing.JLabel();
         FinalizarJuegojButton2 = new javax.swing.JButton();
+        VenderjLabel2 = new javax.swing.JLabel();
+        ComprarjButton2 = new javax.swing.JButton();
+        FertilizantesjLabel5 = new javax.swing.JLabel();
+        VenderjButton3 = new javax.swing.JButton();
+        FondojLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mercado");
@@ -73,6 +79,35 @@ public class FrameMercado extends javax.swing.JFrame {
         });
         jPanel1.add(FinalizarJuegojButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 600, -1, -1));
 
+        VenderjLabel2.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        VenderjLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        VenderjLabel2.setText("Vender");
+        jPanel1.add(VenderjLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, -1, -1));
+
+        ComprarjButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Comprar.PNG"))); // NOI18N
+        ComprarjButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComprarjButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ComprarjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 170, 150));
+
+        FertilizantesjLabel5.setFont(new java.awt.Font("Engravers MT", 1, 18)); // NOI18N
+        FertilizantesjLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        FertilizantesjLabel5.setText("Comprar");
+        jPanel1.add(FertilizantesjLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
+
+        VenderjButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/Vender.PNG"))); // NOI18N
+        VenderjButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VenderjButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VenderjButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 170, 130));
+
+        FondojLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/decoracion/FondoMercado.jpg"))); // NOI18N
+        jPanel1.add(FondojLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 620, 350));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,6 +132,24 @@ public class FrameMercado extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_FinalizarJuegojButton2ActionPerformed
 
+    private void ComprarjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprarjButton2ActionPerformed
+        LlamadoInstancias.comprar();
+        this.dispose();
+    }//GEN-LAST:event_ComprarjButton2ActionPerformed
+
+    private void VenderjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenderjButton3ActionPerformed
+        if(Jugador.jugador1.getEntradaVentas()>0){       
+            LlamadoInstancias.vender();
+            this.dispose();
+        }                                    
+        else{
+            JOptionPane.showMessageDialog(null, "Necesitas primero generar alimentos o productos para vender");
+        }
+        
+        
+        
+    }//GEN-LAST:event_VenderjButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -112,9 +165,14 @@ public class FrameMercado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ComprarjButton2;
+    private javax.swing.JLabel FertilizantesjLabel5;
     private javax.swing.JButton FinalizarJuegojButton2;
+    private javax.swing.JLabel FondojLabel2;
     private javax.swing.JLabel LogojLabel1;
     private javax.swing.JButton RegresarGranjajButton2;
+    private javax.swing.JButton VenderjButton3;
+    private javax.swing.JLabel VenderjLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
